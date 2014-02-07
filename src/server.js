@@ -3,7 +3,8 @@ var ssr = require('./proxy/ssr');
 
 var app = express();
 app.use(express.logger('dev'));
-app.use(express.bodyParser());
+app.use(express.urlencoded());
+app.use(express.json());
 
 app.get('/api/finn/:source/', function(req, res, next){
   if(req.query.bbox) {
