@@ -21,5 +21,11 @@ app.get('/api/finn/:source/', function(req, res, next){
   }
 });
 
+var troda = require('./route/troda');
+
+app.post('/api/troda/', troda.getList);
+app.get('/api/troda/', troda.post);
+app.get('/api/troda/:id', troda.get);
+app.post('/api/troda/:id/task', troda.postTask);
 
 app.listen(process.env.PORT_WWW || 8080);
