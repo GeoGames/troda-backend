@@ -20,8 +20,8 @@ function parse(data) {
             navn: i.skrivemaatenavn,
             type: 'ssr',
             geometry: {
-                "type": "Point",
-                "coordinates": [i.aust, i.nord]
+                type: 'Point',
+                coordinates: [i.aust, i.nord]
             }
         };
     });
