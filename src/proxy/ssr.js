@@ -19,6 +19,10 @@ function parse(data) {
             id: Number(i.ssrId),
             navn: i.skrivemaatenavn,
             type: 'ssr',
+            geometry: {
+                "type": "Point",
+                "coordinates": [i.aust, i.nord]
+            }
         };
     });
 }
