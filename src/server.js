@@ -2,6 +2,7 @@ var express = require('express');
 var ssr = require('./proxy/ssr');
 
 var app = express();
+app.use(express.logger('dev'));
 
 app.get('/api/finn/:source/', function(req, res, next){
   if(req.query.bbox) {
