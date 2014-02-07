@@ -13,6 +13,12 @@ exports.name = function(name, cb) {
 };
 
 function parse(data) {
-    // Handle...
-    return data;
+    var navn = data.sokRes.stedsnavn;
+    return navn.map(function(i) {
+        return {
+            id: Number(i.ssrId),
+            navn: i.skrivemaatenavn,
+            type: 'ssr',
+        };
+    });
 }
