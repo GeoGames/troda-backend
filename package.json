@@ -1,0 +1,25 @@
+{
+  "name": "oppdag",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "mocha test/suite.js",
+    "start": "supervisor -w src -- src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Starefossen/oppdag.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Starefossen/oppdag/issues"
+  },
+  "homepage": "https://github.com/Starefossen/oppdag",
+  "dependencies": {
+    "express": "~3.4.8",
+    "request": "~2.33.0",
+    "xml2js": "~0.2.x"
+  }
+}
