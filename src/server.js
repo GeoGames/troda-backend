@@ -28,4 +28,9 @@ app.get('/api/troda/', troda.post);
 app.get('/api/troda/:id', troda.get);
 app.post('/api/troda/:id/task', troda.postTask);
 
-app.listen(process.env.PORT_WWW || 8080);
+require('./db/mongo').once('ready', function() {
+  var port = process.env.PORT_WWW || 8080;
+  app.listen(port);
+  console.log('Server is listening on port ' + port);
+});
+
