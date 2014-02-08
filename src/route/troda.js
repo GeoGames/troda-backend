@@ -33,7 +33,7 @@ exports.param = function(req, res, next, id) {
 };
 
 exports.getTroda = function(req, res, next) {
-  res.json({foo: 'bar'});
+  res.json(res.troda);
 };
 
 exports.postTask = function(req, res, next) {
