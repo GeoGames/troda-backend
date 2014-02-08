@@ -11,13 +11,6 @@ exports.bbox = function(bbox, cb) {
         xmax: bbox[2],
         ymax: bbox[3]
     };
-    // Temporary, for testing
-    geometry = {
-        xmin: 11.1,
-        ymin: 60.0,
-        xmax: 11.0,
-        ymax: 60.1,
-    };
     var query = {
         geometry: JSON.stringify(geometry),
         geometryType: 'esriGeometryEnvelope',
