@@ -1,6 +1,7 @@
 var express = require('express');
 var ssr = require('./proxy/ssr');
 var kulturminner = require('./proxy/kulturminner');
+var topper = require('./proxy/topper');
 
 var app = express();
 
@@ -39,6 +40,18 @@ app.get('/api/finn/:source/', function(req, res, next){
       });
     } else if(req.query.name) {
       ssr.name(req.query.name, function(err, data) {
+        if(err) { return next(err); }
+        res.json(data);
+      });
+    }
+  } else if(req.params.source === 'topper') {
+    if(req.query.bbox) {
+      topper.bbox(req.query.bbox, function(err, data) {
+        if(err) { return next(err); }
+        res.json(data);
+      });
+    } else if(req.query.name) {
+      topper.name(req.query.name, function(err, data) {
         if(err) { return next(err); }
         res.json(data);
       });
