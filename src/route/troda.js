@@ -1,3 +1,5 @@
+var db = require('./../db/mongo');
+
 exports.getList = function(req, res, next) {
   res.json({foo: 'bar'});
 };
