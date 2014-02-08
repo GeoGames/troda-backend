@@ -12,7 +12,8 @@ var Mongo = function(uri) {
 
     $this.db = database;
     $this.troda = $this.db.collection('troda');
-    $this.troda = $this.db.collection('challenge');
+    $this.challenge = $this.db.collection('challenge');
+    $this.found = $this.db.collection('found');
 
     $this.emit('ready');
   });
