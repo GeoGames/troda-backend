@@ -1,5 +1,5 @@
 // Override MongoDB URI
-process.env.MONGO_URI = 'mongodb://localhost:27017/test2'
+// process.env.MONGO_URI = 'mongodb://localhost:27017/test2'
 
 var app = require('../src/server');
 var db = require('../src/db/mongo');

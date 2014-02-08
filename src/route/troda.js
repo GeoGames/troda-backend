@@ -78,7 +78,7 @@ exports.paramChallenge = function(req, res, next, id) {
   });
 };
 
-exports.foundChallenge = function(req, res, next) {
+exports.postFound = function(req, res, next) {
   if (typeof req.body === 'undefined') {
     return res.jsonp({error: 'No body defined'});
   }
@@ -103,4 +103,12 @@ exports.foundChallenge = function(req, res, next) {
     res.jsonp(doc);
   });
 }
+
+exports.getFounds = function(req, res, next) {
+  var query = {troda: res.troda._id, challenge: res.challenge._id};
+  db.found.find(query).toArray(function(err, docs) {
+    if (err) return next(err);
+    res.jsonp(docs);
+  });
+};
 
