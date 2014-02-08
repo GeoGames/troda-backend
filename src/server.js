@@ -26,9 +26,9 @@ app.get('/api/finn/:source/', function(req, res, next){
 
 var troda = require('./route/troda');
 
-app.get('/api/troda', troda.getList);
-app.post('/api/troda', troda.post);
-app.get('/api/troda/:troda', troda.get);
+app.get('/api/troda', troda.getTrodas);
+app.post('/api/troda', troda.postTroda);
+app.get('/api/troda/:troda', troda.getTroda);
 app.post('/api/troda/:troda/task', troda.postTask);
 app.get('/api/troda/:troda/tasks', troda.getTasks);
 

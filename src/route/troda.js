@@ -1,13 +1,13 @@
 var db = require('./../db/mongo');
 
-exports.getList = function(req, res, next) {
+exports.getTrodas = function(req, res, next) {
   db.troda.find().toArray(function(err, docs) {
     if (err) return next(err);
     res.json(docs);
   });
 };
 
-exports.post = function(req, res, next) {
+exports.postTroda = function(req, res, next) {
   if (typeof req.body === 'undefined') {
     return res.jsonp({error: 'No body defined'});
   }
@@ -22,7 +22,7 @@ exports.post = function(req, res, next) {
   });
 };
 
-exports.get = function(req, res, next) {
+exports.getTroda = function(req, res, next) {
   res.json({foo: 'bar'});
 };
 
