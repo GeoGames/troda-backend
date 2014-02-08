@@ -41,7 +41,7 @@ app.get('/api/troda', troda.getTrodas);
 app.post('/api/troda', troda.postTroda);
 app.param('troda', troda.param);
 app.get('/api/troda/:troda', troda.getTroda);
-app.post('/api/troda/:troda/task', troda.postTask);
+app.post('/api/troda/:troda/tasks', troda.postTask);
 app.get('/api/troda/:troda/tasks', troda.getTasks);
 
 if (!module.parent) {
