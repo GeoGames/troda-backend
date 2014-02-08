@@ -2,9 +2,20 @@ var express = require('express');
 var ssr = require('./proxy/ssr');
 
 var app = express();
+
+//CORS middleware
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+}
+
 if (!module.parent) { app.use(express.logger('dev')); }
 app.use(express.urlencoded());
 app.use(express.json());
+app.use(allowCrossDomain);
+app.use(app.router);
 
 app.get('/api/finn/:source/', function(req, res, next){
   if(req.query.bbox) {
