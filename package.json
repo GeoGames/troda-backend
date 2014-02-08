@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Starefossen/oppdag.git"
+    "url": "git://github.com/GeoGames/troda-backend.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Starefossen/oppdag/issues"
+    "url": "https://github.com/GeoGames/troda-backend/issues"
   },
-  "homepage": "https://github.com/Starefossen/oppdag",
+  "homepage": "https://github.com/GeoGames/troda-backend",
   "dependencies": {
     "express": "~3.4.8",
     "request": "~2.33.0",
