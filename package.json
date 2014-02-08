@@ -4,7 +4,8 @@
   "description": "",
   "main": "src/server.js",
   "scripts": {
-    "test": "mocha test/suite.js",
+    "test": "mocha -b -c --check-leaks test/suite.js -R progress -w",
+    "test-drone": "node_modules/.bin/mocha test/suite.js -R spec",
     "start": "supervisor -w src -- src/server.js"
   },
   "repository": {
