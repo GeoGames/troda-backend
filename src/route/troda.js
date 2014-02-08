@@ -23,7 +23,7 @@ exports.postTroda = function(req, res, next) {
   });
 };
 
-exports.param = function(req, res, next, id) {
+exports.paramTroda = function(req, res, next, id) {
   if (!/[0-9a-f]{24}/.test(id)) return res.json({error: 'Invalid troda id'});
   db.troda.findOne({_id: new ObjectID(id)}, function(err, doc) {
     if (err) return next(err);

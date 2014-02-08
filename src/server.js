@@ -39,7 +39,7 @@ var troda = require('./route/troda');
 
 app.get('/api/troda', troda.getTrodas);
 app.post('/api/troda', troda.postTroda);
-app.param('troda', troda.param);
+app.param('troda', troda.paramTroda);
 app.get('/api/troda/:troda', troda.getTroda);
 app.post('/api/troda/:troda/challenges', troda.postChallenge);
 app.get('/api/troda/:troda/challenges', troda.getChallenges);
