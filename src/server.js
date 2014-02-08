@@ -2,7 +2,7 @@ var express = require('express');
 var ssr = require('./proxy/ssr');
 
 var app = express();
-app.use(express.logger('dev'));
+if (!module.parent) { app.use(express.logger('dev')); }
 app.use(express.urlencoded());
 app.use(express.json());
 
