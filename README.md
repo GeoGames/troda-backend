@@ -23,7 +23,7 @@ Troda Backend
 
 ### Challenge
 
-```
+```json
 {
   "_id": "52f5f8f82d16451b26b70def",
   "troda": "52f5f8742d16451b26b70ded",
@@ -35,7 +35,7 @@ Troda Backend
 
 ### Found
 
-```
+```json
 {
   "_id": "52f5f99e2d16451b26b70df4",
   "troda": "52f5f8742d16451b26b70ded",
