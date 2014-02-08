@@ -52,8 +52,10 @@ app.get('/api/troda', troda.getTrodas);
 app.post('/api/troda', troda.postTroda);
 app.param('troda', troda.paramTroda);
 app.get('/api/troda/:troda', troda.getTroda);
-app.post('/api/troda/:troda/challenges', troda.postChallenge);
-app.get('/api/troda/:troda/challenges', troda.getChallenges);
+app.post('/api/troda/:troda/challenge', troda.postChallenge);
+app.get('/api/troda/:troda/challenge', troda.getChallenges);
+app.param('challenge', troda.paramChallenge);
+app.post('/api/troda/:troda/challenge/:challenge/found', troda.foundChallenge);
 
 if (!module.parent) {
   require('./db/mongo').once('ready', function() {
