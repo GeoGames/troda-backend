@@ -40,8 +40,8 @@ Troda Backend
   "_id": "52f5f99e2d16451b26b70df4",
   "troda": "52f5f8742d16451b26b70ded",
   "challenge": "52f5f8f82d16451b26b70def",
-  "user": {id: 123, name: 'My Name'},
-  datestamp: 1391853979048
+  "user": {"id": 123, "name": "My Name"},
+  "datestamp": 1391853979048
 }
 ```
 
