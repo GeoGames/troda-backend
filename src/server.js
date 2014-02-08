@@ -33,9 +33,13 @@ app.get('/api/troda/:troda', troda.getTroda);
 app.post('/api/troda/:troda/task', troda.postTask);
 app.get('/api/troda/:troda/tasks', troda.getTasks);
 
-require('./db/mongo').once('ready', function() {
-  var port = process.env.PORT_WWW || 8080;
-  app.listen(port);
-  console.log('Server is listening on port ' + port);
-});
+if (!module.parent) {
+  require('./db/mongo').once('ready', function() {
+    var port = process.env.PORT_WWW || 8080;
+    app.listen(port);
+    console.log('Server is listening on port ' + port);
+  });
+} else {
+  module.exports = app;
+}
 
