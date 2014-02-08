@@ -36,11 +36,11 @@ exports.getTroda = function(req, res, next) {
   res.json(res.troda);
 };
 
-exports.postTask = function(req, res, next) {
+exports.postChallenge = function(req, res, next) {
   res.json({foo: 'bar'});
 };
 
-exports.getTasks = function(req, res, next) {
+exports.getChallenges = function(req, res, next) {
   res.json({foo: 'bar'});
 };
 
