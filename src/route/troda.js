@@ -8,7 +8,18 @@ exports.getList = function(req, res, next) {
 };
 
 exports.post = function(req, res, next) {
-  res.json({foo: 'bar'});
+  if (typeof req.body === 'undefined') {
+    return res.jsonp({error: 'No body defined'});
+  }
+
+  if (typeof req.body !== 'object') {
+    return res.jsonp({error: 'Body must be JSON'});
+  }
+
+  db.troda.insert(req.body, {safe: true}, function(err, doc) {
+    if (err) return next(err);
+    res.jsonp(doc);
+  });
 };
 
 exports.get = function(req, res, next) {
