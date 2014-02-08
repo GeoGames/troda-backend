@@ -30,6 +30,7 @@ app.get('/api/troda', troda.getList);
 app.post('/api/troda', troda.post);
 app.get('/api/troda/:troda', troda.get);
 app.post('/api/troda/:troda/task', troda.postTask);
+app.get('/api/troda/:troda/tasks', troda.getTasks);
 
 require('./db/mongo').once('ready', function() {
   var port = process.env.PORT_WWW || 8080;

@@ -29,3 +29,8 @@ exports.get = function(req, res, next) {
 exports.postTask = function(req, res, next) {
   res.json({foo: 'bar'});
 };
+
+exports.getTasks = function(req, res, next) {
+  res.json({foo: 'bar'});
+};
+
