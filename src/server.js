@@ -1,5 +1,6 @@
 var express = require('express');
 var ssr = require('./proxy/ssr');
+var kulturminner = require('./proxy/kulturminner');
 
 var app = express();
 
@@ -18,20 +19,30 @@ app.use(allowCrossDomain);
 app.use(app.router);
 
 app.get('/api/finn/:source/', function(req, res, next){
-  if(req.query.bbox) {
-
-    ssr.bbox(req.query.bbox, function(err, data) {
-      if(err) { return next(err); }
-      res.json(data);
-    });
-
-  } else if(req.query.name) {
-
-    ssr.name(req.query.name, function(err, data) {
-      if(err) { return next(err); }
-      res.json(data);
-    });
-
+  if(req.params.source === 'kulturminner') {
+    if(req.query.bbox) {
+      kulturminner.bbox(req.query.bbox, function(err, data) {
+        if(err) { return next(err); }
+        res.json(data);
+      });
+    } else if(req.query.name) {
+      kulturminner.name(req.query.name, function(err, data) {
+        if(err) { return next(err); }
+        res.json(data);
+      });
+    }
+  } else if(req.params.source === 'ssr') {
+    if(req.query.bbox) {
+      ssr.bbox(req.query.bbox, function(err, data) {
+        if(err) { return next(err); }
+        res.json(data);
+      });
+    } else if(req.query.name) {
+      ssr.name(req.query.name, function(err, data) {
+        if(err) { return next(err); }
+        res.json(data);
+      });
+    }
   }
 });
 
